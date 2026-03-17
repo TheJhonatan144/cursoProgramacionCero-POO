@@ -16,12 +16,10 @@ La tarea en clase es identificar, clasificar, corregir y probar esos errores.
 
 #include <iostream>
 using namespace std;
-
 int main()
 {
     int n1, n2, n3, n4;
-    int promedio;
-
+    double promedio;
     cout << "Ingrese la nota 1: ";
     cin >> n1;
     cout << "Ingrese la nota 2: ";
@@ -30,14 +28,11 @@ int main()
     cin >> n3;
     cout << "Ingrese la nota 4: ";
     cin >> n4;
-
     //
-    promedio = (n1 + n2 + n3 + n4) / 4;
-
+    promedio = (n1 + n2 + n3 + n4) / 4.0;
     cout << "El promedio es: " << promedio << endl;
-
     //
-    if (promedio >= 10)
+    if (promedio >= 10 && promedio < 14)
     {
         cout << "Supletorio" << endl;
     }
@@ -49,6 +44,5 @@ int main()
     {
         cout << "Reprueba" << endl;
     }
-
     return 0;
 }
