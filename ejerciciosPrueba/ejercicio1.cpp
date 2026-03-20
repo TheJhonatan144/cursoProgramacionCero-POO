@@ -21,6 +21,7 @@ using namespace std;
 
 int main()
 {
+    // Declaracion de variables
     int n1, n2, n3, n4;
     int promedio;
 
