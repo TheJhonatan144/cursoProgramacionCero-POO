@@ -25,6 +25,7 @@ int main()
     int n1, n2, n3, n4;
     int promedio;
 
+    // El usuario ingresa una nota
     cout << "Ingrese la nota 1: ";
     cin >> n1;
     cout << "Ingrese la nota 2: ";
