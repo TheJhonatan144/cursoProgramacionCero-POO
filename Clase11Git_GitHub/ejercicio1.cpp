@@ -21,12 +21,27 @@ int main()
 
     cout << "Ingrese la nota 1: ";
     cin >> n1;
+    while (n1 < 0 || n1 > 10)
+    {
+        cout << "Error. Ingrese una nota entre 0 y 10: ";
+        cin >> n1;
+    }
 
     cout << "Ingrese la nota 2: ";
     cin >> n2;
+    while (n2 < 0 || n2 > 10)
+    {
+        cout << "Error. Ingrese una nota entre 0 y 10: ";
+        cin >> n2;
+    }
 
     cout << "Ingrese la nota 3: ";
     cin >> n3;
+    while (n3 < 0 || n3 > 10)
+    {
+        cout << "Error. Ingrese una nota entre 0 y 10: ";
+        cin >> n3;
+    }
 
     promedio = (n1 + n2 + n3) / 3;
 
