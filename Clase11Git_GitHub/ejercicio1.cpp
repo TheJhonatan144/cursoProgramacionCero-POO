@@ -47,5 +47,14 @@ int main()
 
     cout << "Promedio final: " << promedio << endl;
 
+    if (promedio >= 7)
+    {
+        cout << "Estado: APROBADO" << endl;
+    }
+    else
+    {
+        cout << "Estado: REPROBADO" << endl;
+    }
+
     return 0;
 }
