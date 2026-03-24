@@ -168,11 +168,9 @@ void registrarEstudiantes(string nombre[], float notas[], int &cantidad, bool &h
         }
     }
 
-    hay Datos = true
-
-                cout < endl
-                               cout
-                           << "Registro completado correctamente" << endl;
+    hay Datos = true cout < endl
+                                    cout
+                                << "Registro completado correctamente" << endl;
 }
 
 // FUNCION PARA MOSTAR EL LISTADO COMPLETO
@@ -223,3 +221,132 @@ void mostrarPromedio(float notas[], int cantidad, bool hayDatos)
 }
 
 // FUNCION PARA MOSTRAR LA NOTA MAYOR Y LA NOTA MENOR
+void mostrarMayorMenor(string nombres[], float notas[], int cantidad, bool hayDatos)
+{
+    if (hayDatos == false)
+    {
+        cout << endl;
+        cout << "No existen estudiantes registrados todavia." << endl;
+        return;
+    }
+
+    float mayor = notas[0];
+    float menor = notas[0];
+
+    int posMayor = 0;
+    int posMenor = 0;
+
+    for (int i = 1; i < cantidad; i++)
+    {
+        if (notas[i] > mayor)
+        {
+            mayor = notas[i];
+            posMayor = i;
+        }
+
+        if (notas[i] < menor)
+        {
+            menor = notas[i];
+            posMenor = i;
+        }
+    }
+
+    cout << endl;
+    cout << "--- NOTA MAYOR Y NOTA MENOR ---" << endl;
+    cout << "Nota mayor: " << mayor << " - Estudiante: " << nombres[posMayor] << endl;
+    cout << "Nota menor: " << menor << " - Estudiante: " << nombres[posMenor] << endl;
+}
+
+// FUNCION PARA CONTAR APROBADOS Y REPROBADOS
+
+void mostrarAprobadosReprobados(float notas[], int cantidad, bool hayDatos)
+{
+    if (hayDatos == false)
+    {
+        cout << endl;
+        cout << "No existen estudiantes registrados todavia." << endl;
+        return;
+    }
+
+    int aprobados = 0;
+    int reprobados = 0;
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        // Regla de aprobación del problema:
+        // si la nota es mayor o igual a 14, aprueba.
+        if (notas[i] >= 14)
+        {
+            aprobados = aprobados + 1;
+        }
+        else
+        {
+            reprobados = reprobados + 1;
+        }
+    }
+
+    cout << endl;
+    cout << "--- APROBADOS Y REPROBADOS ---" << endl;
+    cout << "Cantidad de aprobados: " << aprobados << endl;
+    cout << "Cantidad de reprobados: " << reprobados << endl;
+}
+
+// FUNCION PARA BUSCAR UN ESTUDIANTE POR NOMBRE
+
+void buscarEstudiante(string nombres[], float notas[], int cantidad, bool hayDatos)
+{
+    if (hayDatos == false)
+    {
+        cout << endl;
+        cout << "No existen estudiantes registrados todavia." << endl;
+        return;
+    }
+
+    string buscado;
+    bool encontrado = false;
+
+    cout << endl;
+    cout << "--- BUSCAR ESTUDIANTE ---" << endl;
+    cout << "Ingrese el nombre del estudiante a buscar: ";
+    cin >> buscado;
+
+    // Búsqueda secuencial
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (nombres[i] == buscado)
+        {
+            cout << endl;
+            cout << "Estudiante encontrado." << endl;
+            cout << "Nombre: " << nombres[i] << endl;
+            cout << "Nota: " << notas[i] << endl;
+
+            // Aquí se reutiliza otra función en lugar de repetir la lógica.
+            // Eso también es buena modularidad.
+            cout << "Estado: " << estadoEstudiante(notas[i]) << endl;
+
+            encontrado = true;
+
+            // Como ya lo encontramos, ya no hace falta seguir recorriendo.
+            break;
+        }
+    }
+
+    if (encontrado == false)
+    {
+        cout << endl;
+        cout << "El estudiante no fue encontrado." << endl;
+    }
+}
+
+// FUNCION PARA DEVOLVER EL ESTADO DEL ESTUDIANTE
+string estadoEstudiante(float nota)
+{
+    if (nota >= 14)
+    {
+        return "Aprobado";
+    }
+    else
+    {
+        return "Reprobado";
+    }
+}
