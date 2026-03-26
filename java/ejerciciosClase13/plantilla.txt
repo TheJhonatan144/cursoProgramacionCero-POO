@@ -1,0 +1,55 @@
+/*
+Titulo: Plantilla A - Estructura basica en Java
+Autor: Jhontan Torres
+
+Enunciado: 
+    Mostrar la estructura minima de un programa en Java. 
+*/
+
+
+public class App { // Aqui declaramos una clase publica llamada App
+    public static void main(String[] args){ // Este es el metodo principal: el programa inicia Aqui
+        System.out.println("Hola, Java"); // Esta linea imprime un mensaje en consola
+
+    } // Aqui termina el main
+} // Aqui termina la clase App
+
+
+
+
+
+/*
+Titulo: Plantilla B - Clase simple en Java
+Autor: Jhontan Torres
+
+Enunciado:
+    Crear una clase llamada Persona con atributos simples
+    para enteder como se representa una entidad en Java.
+*/
+
+
+
+Archivo: Persona.Java
+
+
+public class Persona{
+
+    String nombre; // Atributo que guardara el nombre de la Persona
+    int edad; // Atributo que guarda la edad de la persona
+} // Aqui termina la clase Persona
+
+
+Archivo: App.Java
+
+public class App{ // Clase principal del programa
+    public static void main(String[] args){ // Metodo principal
+        Persona 
+
+
+
+    }
+
+
+}
+
+
